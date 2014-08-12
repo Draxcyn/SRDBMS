@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-package com.iacademy.srdbms;
-
-public class SRDBMS {
-
-	public static void main(String[] args) {
-
-	}
-
-}
-=======
 package com.iacademy.srdbms;
 
 public class SRDBMS {
@@ -20,4 +9,4 @@ public class SRDBMS {
 	}
 
 }
->>>>>>> origin/master
+
