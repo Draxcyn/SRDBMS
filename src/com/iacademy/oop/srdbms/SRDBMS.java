@@ -1,4 +1,4 @@
-package com.iacademy.srdbms;
+package com.iacademy.oop.srdbms;
 
 public class SRDBMS {
 
