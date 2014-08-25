@@ -4,37 +4,38 @@ import java.beans.XMLEncoder;
 import java.beans.XMLDecoder;
 
 import java.io.*;
-
-//import com.iacademy.oop.model.Car;
+import com.iacademy.oop.view.StudentDatabase;
 
 public class BeanHelper {
 
-	/*public void writeToXml(Car [] mgaKotse) {		
+	public void writeToXml(StudentDatabase studentDB[]) { 
 		try {
 			 XMLEncoder encoder = new XMLEncoder(
 	                 new BufferedOutputStream(
-	                 new FileOutputStream("D:\\xmlReport\\car.xml")));
+	                 new FileOutputStream("C:\\xmlReport\\student.xml")));
 			 
-			 encoder.writeObject(mgaKotse);
+			 encoder.writeObject(studentDB);
 			 encoder.close();
 		} catch (FileNotFoundException fnfe) {
 			System.err.println(fnfe.getMessage());
 		}	
 	}
-	
-	public Car[] readFromXml() {
-		Car cars[] = null;
+	/*
+	public StudentDatabase[] readFromXml() {
+		StudentDatabase studentDB[] = null;
 		
 		try {
 			XMLDecoder decoder = new XMLDecoder(
 				new BufferedInputStream(
-	            new FileInputStream("D:\\xmlReport\\car.xml")));
+	            new FileInputStream("C:\\xmlReport\\student.xml")));
 			
-			cars = (Car[]) decoder.readObject();
+			studentDB = (StudentDatabase[]) decoder.readObject();
 			decoder.close();
 		} catch (FileNotFoundException fnfe) {
 			System.err.println(fnfe.getMessage());
 		}		
-		return cars;
-	}*/
+		return studentDB;
+	}
+	*/
+	
 }

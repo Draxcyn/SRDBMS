@@ -1,17 +1,17 @@
-package com.iacademy.oop.srdbms;
+package com.iacademy.oop.model;
 
-class Student {
-	private int id;
+public class Student {
+	private String id;
 	private String lastName;
 	private String firstName;
 	private String course;
 	int yearLevel;
 	int unitsEnrolled;
 	
-	public int getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getLastName() {
@@ -43,8 +43,5 @@ class Student {
 	}
 	public void setUnitsEnrolled(int unitsEnrolled) {
 		this.unitsEnrolled = unitsEnrolled;
-	}
-
-	
-	
+	}	
 }
