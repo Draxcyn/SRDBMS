@@ -8,6 +8,7 @@ public class Student {
 	int yearLevel;
 	int unitsEnrolled;
 	
+	
 	public String getId() {
 		return id;
 	}
@@ -44,4 +45,15 @@ public class Student {
 	public void setUnitsEnrolled(int unitsEnrolled) {
 		this.unitsEnrolled = unitsEnrolled;
 	}	
+	
+	//Constructors
+	public Student() {
+		id = "Empty";
+		lastName = "Empty";
+		firstName = "Empty";
+		course = "Empty";
+		yearLevel = 0;
+		unitsEnrolled = 0;
+	}
+	
 }

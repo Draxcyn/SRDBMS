@@ -4,31 +4,43 @@ import com.iacademy.oop.model.Student;
 import com.iacademy.oop.view.StudentDatabase;
 
 public class DBOperations {
-
-	public void addStudent (StudentDatabase studentDB[],Student student) {
+	
+	public void addStudent (StudentDatabase studentDB[],Student student, int num) {
 		
-		for(int ctr = 0; ctr < 5;ctr++){
-			studentDB[0].equals(student);
+			if(num!=5){
+			studentDB[num].setId(student.getId()); 	
+			studentDB[num].setLastName(student.getLastName());
+			studentDB[num].setFirstName(student.getFirstName());
+			studentDB[num].setCourse(student.getCourse());
+			studentDB[num].setYearLevel(student.getYearLevel());
+			studentDB[num].setUnitsEnrolled(student.getUnitsEnrolled());
+			
+			System.out.println("\nRecorded successfully created at location " + num);
+			new BeanHelper().writeToXml(studentDB);
+			}
+			
+			else{
+				System.out.println("\n\nError record insert - Database is already full.");
+			}
+	}
+		
+	void deleteStudent (StudentDatabase studentDB[],String id) {}
+	
+	public void listStudents (StudentDatabase studentDB[]) {
+		System.out.println("\nLists of Students Enrolled");
+		System.out.println("==========================");
+		for(int ctr = 0; ctr < 5; ctr++){
+			if(studentDB[ctr].getId()!="Empty"){
+				System.out.println("\nID: " + studentDB[ctr].getId());
+				System.out.println("Name: " + studentDB[ctr].getLastName() + ", " + studentDB[ctr].getFirstName());
+				System.out.println("Course: " + studentDB[ctr].getCourse());	
+				System.out.println("Year Level: " + studentDB[ctr].getYearLevel());
+				System.out.println("Units Enrolled: " + studentDB[ctr].getUnitsEnrolled());
+			}
+		Student stdb[] = new BeanHelper().readFromXml();
 		}
 		
-		new BeanHelper().writeToXml(studentDB);
-	}
-	
-	void deleteStudent (StudentDatabase studentDB[],int id) {}
-	
-	void listStudents (StudentDatabase studentDB[]) {
-		System.out.println("Lists of Students Enrolled");
-		System.out.println("==========================\n");
-		//System.out.println("ID: " + studentDB[0].getId());
-		//System.out.println("Name: " + studentDB[0].getName());
-		//System.out.println("Course: " + studentDB[0].getCourse());
-		//System.out.println("Year Level: " + studentDB[0].getYearLevel());
-		//System.out.println("Units Enrolled: " + studentDB[0].getUnitsEnrolled());
-		
-		//Student stdb[] = new BeanHelper().readFromXml();
-		
-		
-		System.out.println("Total Students Enrolled: "); //all conc!
+		System.out.println("\n\nTotal Students Enrolled: "); //all conc!
 		System.out.println("Total # for CS  : ");
 		System.out.println("Total # for IT  : ");
 		System.out.println("Total # for GD  : ");
@@ -45,6 +57,8 @@ public class DBOperations {
 		//access xml
 		//then compare ex. if(studentDB[0].getId==id){};
 	}
+	
+	
 	
 }
 

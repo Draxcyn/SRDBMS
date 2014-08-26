@@ -10,9 +10,14 @@ public class AccessDatabase {
 	static boolean menuLooper = false;
 	static String selectionOption = "";
 	public static StudentDatabase studentDB[] = new StudentDatabase[5]; 
+	static int num = 0;
 	
 	public static void main(String[] args) throws InterruptedException{
 		Scanner scan = new Scanner(System.in);
+		//initialize student DB array
+		for (int ctr = 0; ctr < studentDB.length; ctr++) {
+			studentDB[ctr] = new StudentDatabase();			
+		}
 		
 		do{
 		menu();	
@@ -52,16 +57,18 @@ public class AccessDatabase {
 			student.setYearLevel(sdb.getInteger("Enter Student Year Level: "));
 			student.setUnitsEnrolled(sdb.getInteger("Enter Number of Units Enrolled: "));
 			
-			dbo.addStudent(studentDB,student);
+			dbo.addStudent(studentDB,student,num);
+			num+=1;
 			
 		}
 		else if(selectionOption.equalsIgnoreCase("L")){ //list
+			dbo.listStudents(studentDB);
 		}
 		else if(selectionOption.equalsIgnoreCase("S")){ //search
 			Scanner scan = new Scanner(System.in);
 			System.out.print("\nEnter Student ID: ");
 			String searchId = scan.nextLine();
-			forEach("....");
+			forEach("....", searchId);
 			
 			dbo.searchStudent(studentDB,searchId);
 		}
@@ -75,14 +82,14 @@ public class AccessDatabase {
 			System.out.println("p");
 		}
 	}
-	public static void forEach(String message) throws InterruptedException{
+	public static void forEach(String message, String searchId) throws InterruptedException{
 		char letters[] = message.toCharArray();
 		System.out.print("\nPlease wait");
 		for(char letter : letters){
 			Thread.sleep(500);
 			System.out.print(letter);
 		}
-		System.out.println("searching for student record");
+		System.out.println("searching for student record " + searchId);
 		System.out.println("\nRecord Found!\n");
 	}
 

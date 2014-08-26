@@ -1,8 +1,9 @@
 package com.iacademy.oop.view;
 
 import java.util.*;
+import com.iacademy.oop.model.Student;
 
-public class StudentDatabase {
+public class StudentDatabase extends Student{
 	
 	public String getString(String message) {
 		Scanner scan = new Scanner(System.in);

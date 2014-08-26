@@ -20,7 +20,7 @@ public class BeanHelper {
 			System.err.println(fnfe.getMessage());
 		}	
 	}
-	/*
+	
 	public StudentDatabase[] readFromXml() {
 		StudentDatabase studentDB[] = null;
 		
@@ -36,6 +36,6 @@ public class BeanHelper {
 		}		
 		return studentDB;
 	}
-	*/
+	
 	
 }
